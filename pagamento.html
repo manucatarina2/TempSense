@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adquirir Licença TempSense</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tempsense: {
+                            primary: '#173c54',
+                            light: '#2a5475',
+                            dark: '#0e2535',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f7ff;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .selected-card {
+            border: 3px solid #173c54;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .loader {
+            border-top-color: #173c54;
+            animation: spinner 1.5s linear infinite;
+        }
+        @keyframes spinner {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .feature-list li::before {
+            content: "✓";
+            display: inline-block;
+            color: #173c54;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-tempsense-primary text-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <style>
+                .px-4 {
+                    padding-left: 3.5rem;
+                    padding-right: 3.5rem;
+                }
+                </style>
+            <div class="flex items-center">
+                    <img src="logo.png" alt="Logo TEMPSENSE" class="w-10 h-10" />
+                    <span class="text-blue-navy font-bold text-xl">TEMP<span class="text-blue-primary">SENSE</span></span>
+                </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-white hover:text-gray-200 transition">Início</a>
+                <a href="produtos.html" class="text-white hover:text-gray-200 transition">Produtos</a>
+                <a href="#faq-section" class="text-white hover:text-gray-200 transition">Dúvidas</a>
+            </nav>
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+     <div id="mobile-menu" class="hidden md:hidden mt-4 bg-[rgb(19,84,107)]">
+        <a href="index.html" class="block py-2 px-4 hover:bg-blue-700">Início</a>
+        <a href="#produtos" class="block py-2 px-4 hover:bg-blue-700">Produtos</a>
+        <a href="#faq-section" class="block py-2 px-4 hover:bg-blue-700">Dúvidas</a>
+    </div>
+        <script>
+            document.getElementById('menu-toggle').addEventListener('click', function() {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            });
+        </script>
+</nav>
+</div>
+</header>
+<section id="main-content">
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 pt-24 pb-16">
+        <!-- Page Title -->
+        <div class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-tempsense-primary mb-2">Adquira sua Licença TempSense</h1>
+            <p class="text-gray-600">Garanta a ativação definitiva do seu chuveiro inteligente.</p>
+        </div>
+
+        <!-- Product Selection Section -->
+        <section id="product-selection" class="mb-16">
+            <h2 class="text-2xl font-semibold text-tempsense-primary mb-6">
+                Selecione seu modelo
+            </h2>
+            <p class="text-gray-600 mb-8">Escolha o modelo ideal para transformar sua experiência de banho com tecnologia e economia.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover" data-model="Lagoa" data-price="799.00" data-license="594.44">
+                    <div class="p-6">
+                        <div class="bg-tempsense-primary text-white py-2 px-4 rounded-lg mb-4">
+                            <h3 class="text-xl font-semibold">Lagoa</h3>
+                        </div>
+                        <div class="flex justify-center mb-4">
+                            <svg class="w-32 h-32 text-tempsense-primary" viewBox="0 0 24 24" fill="currentColor"></svg>
+                            <div class="flex justify-center mb-6">
+                                 <img src="lagoa.png" alt="Lagoa" class="h-auto rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-600 mb-1">Preço do produto:</p>
+                            <p class="text-xl font-bold text-gray-800">R$ 799,00</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-600 mb-1">Preço da licença:</p>
+                            <p class="text-xl font-bold text-tempsense-primary">R$ 594,44</p>
+                        </div>
+                        <div class="mb-6">
+                            <p class="text-sm text-gray-600 mb-2">Simplicidade e eficiência para o dia a dia.</p>
+                            <ul class="feature-list text-sm text-gray-700">
+                                <li>Controle manual</li>
+                                <li>Jato único</li>
+                                <li>Economia básica de água</li>
+                                <li>Garantia de 1 ano</li>
+                            </ul>
+                        </div>
+                        <button class="select-product w-full bg-tempsense-primary text-white py-3 rounded-lg hover:bg-tempsense-light transition font-medium">
+                            Selecionar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover" data-model="Família" data-price="1599.00" data-license="594.44">
+                    <div class="p-6">
+                        <div class="bg-tempsense-primary text-white py-2 px-4 rounded-lg mb-4">
+                            <h3 class="text-xl font-semibold">Família</h3>
+                        </div>
+                        <div class="flex justify-center mb-4">
+                            <svg class="w-32 h-32 text-tempsense-primary" viewBox="0 0 24 24" fill="currentColor"></svg>
+                            <div class="flex justify-center mb-6">
+                                <img src="familia.png" alt="Família" class="h-auto rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-600 mb-1">Preço do produto:</p>
+                            <p class="text-xl font-bold text-gray-800">R$ 1.599,00</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-600 mb-1">Preço da licença:</p>
+                            <p class="text-xl font-bold text-tempsense-primary">R$ 594,44</p>
+                        </div>
+                        <div class="mb-6">
+                            <p class="text-sm text-gray-600 mb-2">Pensado para toda a família, combina resistência e modernidade.</p>
+                            <ul class="feature-list text-sm text-gray-700">
+                                <li>Controle digital</li>
+                                <li>4 jatos de água</li>
+                                <li>Economia avançada</li>
+                                <li>Garantia de 2 anos</li>
+                            </ul>
+                        </div>
+                        <button class="select-product w-full bg-tempsense-primary text-white py-3 rounded-lg hover:bg-tempsense-light transition font-medium">
+                            Selecionar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover" data-model="Terapia" data-price="1799.00" data-license="594.44">
+                    <div class="p-6">
+                        <div class="bg-tempsense-primary text-white py-2 px-4 rounded-lg mb-4">
+                            <h3 class="text-xl font-semibold">Terapia</h3>
+                        </div>
+                        <div class="flex justify-center mb-4">
+                            <svg class="w-32 h-32 text-tempsense-primary" viewBox="0 0 24 24" fill="currentColor"></svg>
+                            <div class="flex justify-center mb-6">
+                                <img src="terapeutico.png" alt="Terapêutico" class="h-auto rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-600 mb-1">Preço do produto:</p>
+                            <p class="text-xl font-bold text-gray-800">R$ 1.799,00</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-600 mb-1">Preço da licença:</p>
+                            <p class="text-xl font-bold text-tempsense-primary">R$ 594,44</p>
+                        </div>
+                        <div class="mb-6">
+                            <p class="text-sm text-gray-600 mb-2">Conforto e tecnologia para um momento de relaxamento.</p>
+                            <ul class="feature-list text-sm text-gray-700">
+                                <li>Controle touch</li>
+                                <li>6 jatos potentes</li>
+                                <li>LCD colorido e LED RGB</li>
+                                <li>Garantia de 3 anos</li>
+                            </ul>
+                        </div>
+                        <button class="select-product w-full bg-tempsense-primary text-white py-3 rounded-lg hover:bg-tempsense-light transition font-medium">
+                            Selecionar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover" data-model="Pacífico" data-price="2499.00" data-license="594.44">
+                    <div class="p-6">
+                        <div class="bg-tempsense-primary text-white py-2 px-4 rounded-lg mb-4">
+                            <h3 class="text-xl font-semibold">Pacífico</h3>
+                        </div>
+                        <div class="flex justify-center mb-4">
+                            <svg class="w-32 h-32 text-tempsense-primary" viewBox="0 0 24 24" fill="currentColor"></svg>
+                            <div class="flex justify-center mb-6">
+                                <img src="pacifico.png" alt="Pacífico" class="h-auto rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-600 mb-1">Preço do produto:</p>
+                            <p class="text-xl font-bold text-gray-800">R$ 2.499,00</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-600 mb-1">Preço da licença:</p>
+                            <p class="text-xl font-bold text-tempsense-primary">R$ 594,44</p>
+                        </div>
+                        <div class="mb-6">
+                            <p class="text-sm text-gray-600 mb-2">O mais completo da linha, para uma experiência sensorial.</p>
+                            <ul class="feature-list text-sm text-gray-700">
+                                <li>Comando por toque e voz</li>
+                                <li>7 jatos potentes</li>
+                                <li>LCD HD e cromoterapia</li>
+                                <li>Garantia de 5 anos</li>
+                            </ul>
+                        </div>
+                        <button class="select-product w-full bg-tempsense-primary text-white py-3 rounded-lg hover:bg-tempsense-light transition font-medium">
+                            Selecionar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+         <section id="faq-section" class="mb-16">
+            <h2 class="text-2xl font-semibold text-tempsense-primary mb-6">Dúvidas Frequentes</h2>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6 space-y-4">
+                    <!-- FAQ Items -->
+                     <div class="faq-item border-b border-gray-200">
+                        <button class="faq-question w-full text-left py-4 font-medium text-tempsense-primary focus:outline-none">1. O que é a licença perpétua TempSense?</button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-gray-700">
+                            <p class="pb-4">A licença perpétua é um pagamento único que dá ao cliente o direito de utilizar o software embarcado no chuveiro inteligente TempSense por tempo ilimitado, sem mensalidades ou renovações futuras.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item border-b border-gray-200">
+                        <button class="faq-question w-full text-left py-4 font-medium text-tempsense-primary focus:outline-none">2. Essa licença é obrigatória para o funcionamento do chuveiro?</button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-gray-700">
+                            <p class="pb-4">Sim, a licença é necessária para ativar e utilizar os recursos inteligentes do seu chuveiro TempSense, como controle de temperatura, jatos, LED e economia de água. Sem a licença, o dispositivo funcionará de forma limitada.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item border-b border-gray-200">
+                        <button class="faq-question w-full text-left py-4 font-medium text-tempsense-primary focus:outline-none">3. A licença serve para todos os modelos TempSense?</button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-gray-700">
+                            <p class="pb-4">Sim, a licença é compatível com todos os modelos TempSense (Lagoa, Família, Terapia e Pacífico), mas deve ser adquirida individualmente para cada unidade instalada.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item border-b border-gray-200">
+                        <button class="faq-question w-full text-left py-4 font-medium text-tempsense-primary focus:outline-none">4. Como recebo minha licença após a compra?</button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-gray-700">
+                            <p class="pb-4">Após a confirmação do pagamento, você receberá um código de ativação exclusivo por e-mail junto com instruções para instalação e ativação no seu produto.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item border-b border-gray-200">
+                        <button class="faq-question w-full text-left py-4 font-medium text-tempsense-primary focus:outline-none">5. Preciso instalar o software por conta própria?</button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-gray-700">
+                            <p class="pb-4">Não. O software já vem pré-instalado no chuveiro. Basta inserir o código da licença no painel digital do seu modelo para liberar todas as funcionalidades.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border-b border-gray-200">
+                        <button class="faq-question w-full text-left py-4 font-medium text-tempsense-primary focus:outline-none">6. Posso transferir a licença para outro chuveiro ou residência?</button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-gray-700">
+                            <p class="pb-4">A licença é vinculada ao número de série do seu chuveiro. Em caso de mudança de residência, você pode transferir a licença junto com o dispositivo, mas não entre modelos diferentes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border-b border-gray-200">
+                        <button class="faq-question w-full text-left py-4 font-medium text-tempsense-primary focus:outline-none">7. Existe suporte técnico para dúvidas ou problemas?</button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-gray-700">
+                            <p class="pb-4">Sim! Oferecemos suporte via e-mail e chat para ajudá-lo com qualquer dúvida sobre ativação, funcionamento do software ou problemas técnicos.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question w-full text-left py-4 font-medium text-tempsense-primary focus:outline-none">8. E se eu perder o código da licença?</button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-gray-700">
+                            <p class="pb-4">Você pode recuperar o código entrando em contato com nosso suporte, informando seus dados e comprovante de compra.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Script para efeito de abrir/fechar -->
+<script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const isOpen = answer.classList.contains('max-h-96');
+
+      // Fecha todas as outras respostas
+      document.querySelectorAll('.faq-answer').forEach(a => {
+        a.classList.remove('max-h-96');
+        a.classList.add('max-h-0');
+      });
+
+      // Se não estava aberto, abre
+      if (!isOpen) {
+        answer.classList.remove('max-h-0');
+        answer.classList.add('max-h-96');
+      }
+    });
+  });
+</script>
+
+        <!-- Order Summary Section -->
+        <section id="order-summary" class="mb-16 hidden">
+            <h2 class="text-2xl font-semibold text-tempsense-primary mb-6">
+                Resumo da sua compra
+            </h2>
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <div class="mb-4">
+                            <p class="text-gray-600 mb-1">Modelo escolhido:</p>
+                            <p id="summary-model" class="text-xl font-bold text-gray-800">-</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-600 mb-1">Preço do produto:</p>
+                            <p id="summary-product-price" class="text-xl font-bold text-gray-800">-</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-4">
+                            <p class="text-gray-600 mb-1">Preço da licença:</p>
+                            <p id="summary-license-price" class="text-xl font-bold text-tempsense-primary">-</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-600 mb-1">Preço total final:</p>
+                            <p id="summary-total-price" class="text-2xl font-bold text-tempsense-primary">-</p>
+                        </div>
+                    </div>
+                </div>
+                <button id="change-model" class="mt-4 bg-gray-100 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-200 transition font-medium">
+                    Alterar modelo
+                </button>
+            </div>
+        </section>
+
+        <!-- Payment Section -->
+        <section id="payment-section" class="mb-16 hidden">
+            <h2 class="text-2xl font-semibold text-tempsense-primary mb-6">
+                Finalizar pagamento
+            </h2>
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <!-- Payment Tabs -->
+                <div class="mb-6">
+                    <div class="flex border-b overflow-x-auto">
+                        <button id="tab-credit-card" class="payment-tab py-3 px-6 border-b-2 border-tempsense-primary text-tempsense-primary font-medium whitespace-nowrap">
+                            Cartão de Crédito
+                        </button>
+                        <button id="tab-pix" class="payment-tab py-3 px-6 border-b-2 border-transparent text-gray-500 font-medium whitespace-nowrap">
+                            Pix
+                        </button>
+                        <button id="tab-boleto" class="payment-tab py-3 px-6 border-b-2 border-transparent text-gray-500 font-medium whitespace-nowrap">
+                            Boleto Bancário
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Credit Card Form -->
+                <div id="form-credit-card" class="payment-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Nome completo</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-tempsense-primary">
+                            </div>
+                            <div class="mb-4">
+                                <label for="document" class="block text-gray-700 mb-2">CPF/CNPJ</label>
+                                <input type="text" id="document" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-tempsense-primary">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">E-mail para envio da licença</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-tempsense-primary">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-4">
+                                <label for="card-number" class="block text-gray-700 mb-2">Número do cartão</label>
+                                <input type="text" id="card-number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-tempsense-primary">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="mb-4">
+                                    <label for="card-expiry" class="block text-gray-700 mb-2">Validade</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/AA" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-tempsense-primary">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="card-cvv" class="block text-gray-700 mb-2">CVV</label>
+                                    <input type="text" id="card-cvv" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-tempsense-primary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pix Form -->
+                <div id="form-pix" class="payment-form hidden">
+                    <div class="text-center py-6">
+                        <div class="mb-6">
+                            <svg class="w-48 h-48 mx-auto" viewBox="0 0 200 200">
+                                <rect x="0" y="0" width="200" height="200" fill="#f0f0f0"/>
+                                <g fill="#173c54">
+                                    <rect x="50" y="50" width="10" height="10"/>
+                                    <rect x="60" y="50" width="10" height="10"/>
+                                    <rect x="70" y="50" width="10" height="10"/>
+                                    <rect x="80" y="50" width="10" height="10"/>
+                                    <rect x="90" y="50" width="10" height="10"/>
+                                    <rect x="140" y="50" width="10" height="10"/>
+                                    <rect x="50" y="60" width="10" height="10"/>
+                                    <rect x="90" y="60" width="10" height="10"/>
+                                    <rect x="110" y="60" width="10" height="10"/>
+                                    <rect x="140" y="60" width="10" height="10"/>
+                                    <rect x="50" y="70" width="10" height="10"/>
+                                    <rect x="70" y="70" width="10" height="10"/>
+                                    <rect x="80" y="70" width="10" height="10"/>
+                                    <rect x="90" y="70" width="10" height="10"/>
+                                    <rect x="110" y="70" width="10" height="10"/>
+                                    <rect x="140" y="70" width="10" height="10"/>
+                                    <rect x="50" y="80" width="10" height="10"/>
+                                    <rect x="70" y="80" width="10" height="10"/>
+                                    <rect x="110" y="80" width="10" height="10"/>
+                                    <rect x="140" y="80" width="10" height="10"/>
+                                    <rect x="50" y="90" width="10" height="10"/>
+                                    <rect x="70" y="90" width="10" height="10"/>
+                                    <rect x="90" y="90" width="10" height="10"/>
+                                    <rect x="140" y="90" width="10" height="10"/>
+                                    <rect x="50" y="100" width="10" height="10"/>
+                                    <rect x="60" y="100" width="10" height="10"/>
+                                    <rect x="70" y="100" width="10" height="10"/>
+                                    <rect x="80" y="100" width="10" height="10"/>
+                                    <rect x="90" y="100" width="10" height="10"/>
+                                    <rect x="100" y="100" width="10" height="10"/>
+                                    <rect x="110" y="100" width="10" height="10"/>
+                                    <rect x="120" y="100" width="10" height="10"/>
+                                    <rect x="130" y="100" width="10" height="10"/>
+                                    <rect x="140" y="100" width="10" height="10"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <p class="text-gray-700 mb-4">Escaneie o QR Code acima com o aplicativo do seu banco</p>
+                        <div class="mb-4">
+                            <label for="pix-email" class="block text-gray-700 mb-2">E-mail para envio da licença</label>
+                            <input type="email" id="pix-email" class="w-full max-w-md mx-auto px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-tempsense-primary">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boleto Form -->
+                <div id="form-boleto" class="payment-form hidden">
+                    <div class="text-center py-6">
+                        <div class="mb-6">
+                            <svg class="w-64 h-32 mx-auto" viewBox="0 0 300 100">
+                                <rect x="0" y="0" width="300" height="100" fill="#f0f0f0"/>
+                                <g fill="#173c54">
+                                    <rect x="10" y="80" width="2" height="10"/>
+                                    <rect x="15" y="80" width="1" height="10"/>
+                                    <rect x="20" y="80" width="3" height="10"/>
+                                    <rect x="25" y="80" width="2" height="10"/>
+                                    <rect x="30" y="80" width="1" height="10"/>
+                                    <rect x="35" y="80" width="3" height="10"/>
+                                    <rect x="40" y="80" width="2" height="10"/>
+                                    <rect x="45" y="80" width="1" height="10"/>
+                                    <rect x="50" y="80" width="3" height="10"/>
+                                    <rect x="55" y="80" width="2" height="10"/>
+                                    <rect x="60" y="80" width="1" height="10"/>
+                                    <rect x="65" y="80" width="3" height="10"/>
+                                    <rect x="70" y="80" width="2" height="10"/>
+                                    <rect x="75" y="80" width="1" height="10"/>
+                                    <rect x="80" y="80" width="3" height="10"/>
+                                    <rect x="85" y="80" width="2" height="10"/>
+                                    <rect x="90" y="80" width="1" height="10"/>
+                                    <rect x="95" y="80" width="3" height="10"/>
+                                    <rect x="100" y="80" width="2" height="10"/>
+                                    <rect x="105" y="80" width="1" height="10"/>
+                                    <rect x="110" y="80" width="3" height="10"/>
+                                    <rect x="115" y="80" width="2" height="10"/>
+                                    <rect x="120" y="80" width="1" height="10"/>
+                                    <rect x="125" y="80" width="3" height="10"/>
+                                    <rect x="130" y="80" width="2" height="10"/>
+                                    <rect x="135" y="80" width="1" height="10"/>
+                                    <rect x="140" y="80" width="3" height="10"/>
+                                    <rect x="145" y="80" width="2" height="10"/>
+                                    <rect x="150" y="80" width="1" height="10"/>
+                                    <rect x="155" y="80" width="3" height="10"/>
+                                    <rect x="160" y="80" width="2" height="10"/>
+                                    <rect x="165" y="80" width="1" height="10"/>
+                                    <rect x="170" y="80" width="3" height="10"/>
+                                    <rect x="175" y="80" width="2" height="10"/>
+                                    <rect x="180" y="80" width="1" height="10"/>
+                                    <rect x="185" y="80" width="3" height="10"/>
+                                    <rect x="190" y="80" width="2" height="10"/>
+                                    <rect x="195" y="80" width="1" height="10"/>
+                                    <rect x="200" y="80" width="3" height="10"/>
+                                    <rect x="205" y="80" width="2" height="10"/>
+                                    <rect x="210" y="80" width="1" height="10"/>
+                                    <rect x="215" y="80" width="3" height="10"/>
+                                    <rect x="220" y="80" width="2" height="10"/>
+                                    <rect x="225" y="80" width="1" height="10"/>
+                                    <rect x="230" y="80" width="3" height="10"/>
+                                    <rect x="235" y="80" width="2" height="10"/>
+                                    <rect x="240" y="80" width="1" height="10"/>
+                                    <rect x="245" y="80" width="3" height="10"/>
+                                    <rect x="250" y="80" width="2" height="10"/>
+                                    <rect x="255" y="80" width="1" height="10"/>
+                                    <rect x="260" y="80" width="3" height="10"/>
+                                    <rect x="265" y="80" width="2" height="10"/>
+                                    <rect x="270" y="80" width="1" height="10"/>
+                                    <rect x="275" y="80" width="3" height="10"/>
+                                    <rect x="280" y="80" width="2" height="10"/>
+                                    <rect x="285" y="80" width="1" height="10"/>
+                                    <rect x="290" y="80" width="3" height="10"/>
+                                </g>
+                                <text x="150" y="50" font-family="Montserrat" font-size="12" text-anchor="middle" fill="#173c54">TempSense - Boleto Bancário</text>
+                            </svg>
+                        </div>
+                        <button class="bg-tempsense-primary text-white px-6 py-3 rounded-lg hover:bg-tempsense-light transition font-medium mb-4">
+                            Imprimir Boleto
+                        </button>
+                        <p class="text-gray-700 mb-4">O boleto tem vencimento em 3 dias úteis</p>
+                        <div class="mb-4">
+                            <label for="boleto-email" class="block text-gray-700 mb-2">E-mail para envio da licença</label>
+                            <input type="email" id="boleto-email" class="w-full max-w-md mx-auto px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-tempsense-primary">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 text-center text-gray-600">
+                    A licença será enviada por e-mail após confirmação do pagamento.
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms Section -->
+        <section id="terms-section" class="mb-8 hidden">
+            <div class="flex items-center">
+                <input type="checkbox" id="terms-checkbox" class="w-5 h-5 text-tempsense-primary rounded focus:ring-tempsense-primary">
+                <label for="terms-checkbox" class="ml-2 text-gray-700">
+                    Li e aceito os <a href="#" class="text-tempsense-primary hover:underline">termos de uso</a> da licença TempSense
+                </label>
+            </div>
+        </section>
+    </main>
+</section>
+
+        <!-- Final Button -->
+        <div id="final-button-section" class="text-center hidden">
+            <button id="complete-purchase" class="bg-tempsense-primary text-white px-10 py-4 rounded-lg hover:bg-tempsense-light transition font-medium text-lg disabled:bg-gray-400 disabled:cursor-not-allowed" disabled>
+                Concluir Compra
+            </button>
+        </div>
+
+        <!-- Thank You Message -->
+        <div id="thank-you-section" class="text-center py-16 hidden">
+            <div class="mb-6">
+                <svg class="w-20 h-20 mx-auto text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <h2 class="text-3xl font-bold text-tempsense-primary mb-4">Obrigado por adquirir sua licença TempSense!</h2>
+            <p class="text-xl text-gray-600">Em breve, você receberá seu código de ativação por e-mail.</p>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-xl flex flex-col items-center">
+                <div class="loader w-12 h-12 border-4 border-gray-200 rounded-full mb-4"></div>
+                <p class="text-gray-700">Processando seu pagamento...</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Variables
+            let selectedModel = null;
+            let selectedModelPrice = 0;
+            let licensePrice = 594.44;
+
+            // Elements
+            const productCards = document.querySelectorAll('.card-hover');
+            const productSection = document.getElementById('product-selection');
+            const orderSummary = document.getElementById('order-summary');
+            const paymentSection = document.getElementById('payment-section');
+            const termsSection = document.getElementById('terms-section');
+            const finalButtonSection = document.getElementById('final-button-section');
+            const faqSection = document.getElementById('faq-section');
+            const thankYouSection = document.getElementById('thank-you-section');
+            const loadingOverlay = document.getElementById('loading-overlay');
+            const mainSection = document.getElementById('main-content');
+
+            const summaryModel = document.getElementById('summary-model');
+            const summaryProductPrice = document.getElementById('summary-product-price');
+            const summaryLicensePrice = document.getElementById('summary-license-price');
+            const summaryTotalPrice = document.getElementById('summary-total-price');
+            
+            const changeModelBtn = document.getElementById('change-model');
+            const termsCheckbox = document.getElementById('terms-checkbox');
+            const completePurchaseBtn = document.getElementById('complete-purchase');
+            
+            const paymentTabs = document.querySelectorAll('.payment-tab');
+            const paymentForms = document.querySelectorAll('.payment-form');
+
+            // Format currency
+            function formatCurrency(value) {
+                return `R$ ${value.toFixed(2).replace('.', ',')}`;
+            }
+
+            // Select product
+            document.querySelectorAll('.select-product').forEach(button => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('[data-model]');
+                    selectedModel = card.dataset.model;
+                    selectedModelPrice = parseFloat(card.dataset.price);
+                    
+                    // Update all cards
+                    productCards.forEach(card => {
+                        card.classList.remove('selected-card');
+                    });
+                    card.classList.add('selected-card');
+                    
+                    // Update summary
+                    summaryModel.textContent = selectedModel;
+                    summaryProductPrice.textContent = formatCurrency(selectedModelPrice);
+                    summaryLicensePrice.textContent = formatCurrency(licensePrice);
+                    summaryTotalPrice.textContent = formatCurrency(selectedModelPrice + licensePrice);
+                    
+                    // Show next sections
+                    orderSummary.classList.remove('hidden');
+                    paymentSection.classList.remove('hidden');
+                    termsSection.classList.remove('hidden');
+                    finalButtonSection.classList.remove('hidden');
+                    
+                    // Scroll to summary
+                    orderSummary.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Change model button
+            changeModelBtn.addEventListener('click', function() {
+                productSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Payment tabs
+            paymentTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.id;
+                    const formId = tabId.replace('tab-', 'form-');
+                    
+                    // Update tabs
+                    paymentTabs.forEach(t => {
+                        t.classList.remove('border-tempsense-primary', 'text-tempsense-primary');
+                        t.classList.add('border-transparent', 'text-gray-500');
+                    });
+                    this.classList.remove('border-transparent', 'text-gray-500');
+                    this.classList.add('border-tempsense-primary', 'text-tempsense-primary');
+                    
+                    // Update forms
+                    paymentForms.forEach(form => {
+                        form.classList.add('hidden');
+                    });
+                    document.getElementById(formId).classList.remove('hidden');
+                });
+            });
+
+            // Terms checkbox
+            termsCheckbox.addEventListener('change', function() {
+                completePurchaseBtn.disabled = !this.checked;
+            });
+
+            // Complete purchase
+            completePurchaseBtn.addEventListener('click', function() {
+                // Show loading
+                loadingOverlay.classList.remove('hidden');
+                
+                // Simulate processing
+                setTimeout(function() {
+                    // Hide loading
+                    loadingOverlay.classList.add('hidden');
+                    
+                    // Hide all sections
+                    productSection.classList.add('hidden');
+                    orderSummary.classList.add('hidden');
+                    paymentSection.classList.add('hidden');
+                    termsSection.classList.add('hidden');
+                    finalButtonSection.classList.add('hidden');
+                    faqSection.classList.add('hidden');
+                    mainSection.classList.add('hidden');
+                    
+                    // Show thank you
+                    thankYouSection.classList.remove('hidden');
+                    
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <span class="text-white-clean font-bold text-xl">TEMP<span class="text-blue-light">SENSE</span></span>
+                    </div>
+                    <p class="opacity-80 mb-4">Tecnologia que sente, conforto que transforma.</p>
+                    <p class="opacity-80 text-sm">© 2025 TEMPSENSE. Todos os direitos reservados.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="opacity-80 mb-4">Inscreva-se para receber novidades e promoções exclusivas.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-gray-800">
+                        <button type="button" class="bg-blue-primary hover:bg-blue-600 px-4 py-2 rounded-r-lg transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L12 8.414V16a1 1 0 11-2 0V8.414l-2.293 2.293a1 1 0 01-1.414-1.414l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+</html>
